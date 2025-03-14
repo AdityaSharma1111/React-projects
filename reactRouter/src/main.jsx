@@ -9,7 +9,7 @@ import Home from './components/Home/Home.jsx'
 import About from './components/About/About.jsx'
 import Contact from './components/Contacts/Contacts.jsx'
 import User from './components/User/User.jsx'
-import Github from './components/Github/Github.jsx'
+import Github, { githubInfoLoader} from './components/Github/Github.jsx'
 
 // const router = createBrowserRouter([
 //   {
@@ -33,6 +33,7 @@ import Github from './components/Github/Github.jsx'
 // ])
 
 // another way to create the router
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
@@ -40,7 +41,9 @@ const router = createBrowserRouter(
       <Route path='about' element={<About />} />
       <Route path='contact' element={<Contact />} />
       <Route path='user/:id' element={<User />} />
-      <Route path='github' element={<Github />} />
+      <Route 
+      loader= {githubInfoLoader} // loader helps to fetch the data before rendering the component, optimizes the performance
+      path='github' element={<Github />} />
     </Route>
   )
 )
@@ -49,6 +52,5 @@ const router = createBrowserRouter(
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
-    <App/>
   </StrictMode>,
 )

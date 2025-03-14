@@ -10,6 +10,9 @@ function App() {
   const passwordRef = useRef(null) // useRef is used to get the reference of the input element
 
   const generatePassword = useCallback(() => { 
+    //It does NOT trigger a re-render.
+    // It memoizes (remembers) a function so that it doesn't get recreated on every render.
+
     // for optimal performance, we are using the useCallback hook
     // useCallback is used to prevent the function from being recreated on every render
     // it memoizes the function so that it is only recreated when the dependencies change
@@ -27,7 +30,7 @@ function App() {
       password += charset.charAt(random)
     }
     setPassword(password)
-  } , [length, numAllowed, charAllowed, setPassword])
+  } , [length, numAllowed, charAllowed, setPassword]) // optimize the method whenever the dependencies change
   // if we send password as a dependency, it will cause an infinite loop because the function will be recreated every time the password changes
   // we are sending setPassword as a dependency because it is a function and it will not change, it memoizes the function
   // everytime the dependencies change, the function is recreated and the new function is memoized
@@ -42,6 +45,8 @@ function App() {
 
 
   useEffect(() => {
+    // It runs after the component renders.
+    // If dependencies change, it executes the effect again.
     // run the method whenever the dependencies change
     generatePassword()
   }, [length, numAllowed, charAllowed, generatePassword])

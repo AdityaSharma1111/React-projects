@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom' // useParams is a hook that allows you to access the URL parameters
 
 function User() {
     const {id} = useParams()
