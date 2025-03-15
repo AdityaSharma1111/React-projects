@@ -3,9 +3,10 @@ import useTheme from '../contexts/theme.js'
 
 export default function ThemeBtn() {
     
-    const {themeMode, lightTheme, darkTheme} = useTheme()
+    const {themeMode, lightTheme, darkTheme} = useTheme() // Destructuring the values from the context
+
     const onChangeBtn = (e) => {
-        const darkModeStatus = e.target.checked;
+        const darkModeStatus = e.target.checked; // Getting the status of the checkbox
         if(darkModeStatus) {
             darkTheme()
         }
@@ -13,6 +14,7 @@ export default function ThemeBtn() {
             lightTheme()
         }
     }
+
     return (
         <label className="relative inline-flex items-center cursor-pointer">
             <input
