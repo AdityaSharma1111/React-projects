@@ -28,6 +28,7 @@ function App() {
   }
 
   useEffect(() => { // useEffect to get todos from localStorage
+    // localStorage stores key-value pairs as strings
     const todos = JSON.parse(localStorage.getItem("todos")) // get todos from localStorage 
 
     if(todos && todos.length > 0) {

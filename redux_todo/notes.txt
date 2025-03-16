@@ -1,0 +1,21 @@
+REDUX:
+one application, one store
+1. configure the store
+2. make reducers(slices)
+3. make an initial state(array/object)
+4. make slice(name, initial state, reducers->properties & functions)
+also write function definition in reducers
+state: gives the access of values present in the initial state
+action: values we provide
+5. export all the parts of the reducer
+export all the individual functionalities(we update the state through the functionalities only)
+export the reducer
+6. import the reducer in the store
+7. make components
+useDispatch: make changes in the store with the help of a reducer
+useSelector: we get access of the state in a callback
+
+*we use callback whenever we have to give the parameters in a method
+*if we use funct(), it will be immediately executed
+
+8. Wrap the components either in main.jsx or app.jsx
