@@ -7,7 +7,7 @@ const initialState = { // initial by-default state of the slice(reducer)
 }
 
 export const todoSlice = createSlice({
-    name: "todo",
+    name: "todo", // name of the slice 
     initialState,
     reducers: { // key-functions that update the state
         addTodo: (state, action) => {
@@ -25,4 +25,4 @@ export const todoSlice = createSlice({
 
 export const { addTodo, removeTodo } = todoSlice.actions
 
-export default todoSlice.reducer // store only allows to update the state through reducers registered in the store
+export const todoReducer = todoSlice.reducer // store only allows to update the state through reducers registered in the store
