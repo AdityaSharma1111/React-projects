@@ -12,7 +12,9 @@ function App() {
   }
 
   const updateTodo = (id, todo) => {
-    setTodos((prev) => (prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo))))
+    // The .map() function replaces the old object that needs to be changed with a new object, while keeping all other objects unchanged.
+    // It returns a new array with modifications applied to specific elements.
+    setTodos((prev) => (prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo)))) 
   }
   
   const deleteTodo = (id) => {
